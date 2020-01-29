@@ -1,0 +1,29 @@
+<style>
+    .square {
+        background: navy;
+        width: 200px;
+        height: 200px;
+        margin: 10px;
+        float: left;
+    }
+</style>
+<body>
+<div id="squares"></form>
+<div id="out"></div>
+</body>
+<script>
+    let sum = 0;
+    let squares = document.getElementById('squares');
+    for (let i = 0; i < 12; i++) {
+        let square = squares.appendChild(document.createElement('div'));
+        square.classList.add("square");
+        square.addEventListener('click', func);
+        square.value = i + 1;
+    }
+    let out = document.getElementById('out');
+
+    function func() {
+        sum += this.value;
+        out.innerHTML = sum;
+    }
+</script>
